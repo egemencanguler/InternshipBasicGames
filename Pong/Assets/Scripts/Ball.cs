@@ -28,10 +28,7 @@ public class Ball : MonoBehaviour
         player1 = GameCore.instance.Get_Player1().GetComponent<Player>();
         player2 = GameCore.instance.Get_Player2().GetComponent<Player>();
     }
-    private void OnDisable()
-    {
-        transform.position = Vector2.zero;
-    }
+
     // Update is called once per frame
     void Update()
     {
@@ -87,14 +84,14 @@ public class Ball : MonoBehaviour
         if (newPos.x - (bounds.size.x / 2) < player1.Get_bounds().max.x && CheckPaddleCollision(player1) && 
             Vector2.Dot(player1.Get_bounds().ClosestPoint(transform.position).normalized, velocity.normalized) > 0)
         {
-            if ((player1.Get_bounds().ClosestPoint(transform.position).y == player1.Get_bounds().max.y ||
+            if ((player1.Get_bounds().ClosestPoint(transform.position).y == player1.Get_bounds().max.y || // For y-axis collision
                 player1.Get_bounds().ClosestPoint(transform.position).y == player1.Get_bounds().min.y) && newPos.x + (bounds.size.x / 2) > player1.Get_bounds().min.x)
             {
                 newPos.y = player1.Get_bounds().ClosestPoint(transform.position).y;
                 movementDirection.y = -movementDirection.y;
                 velocity.y = -velocity.y;
             }
-            else if (player1.Get_bounds().ClosestPoint(transform.position).x == player1.Get_bounds().max.x)
+            else if (player1.Get_bounds().ClosestPoint(transform.position).x == player1.Get_bounds().max.x) // For x-axis collision
             {
                 newPos.x = player1.Get_bounds().ClosestPoint(transform.position).x + (bounds.size.x / 2);
                 movementDirection.x = -movementDirection.x;
@@ -109,14 +106,14 @@ public class Ball : MonoBehaviour
         if (newPos.x + (bounds.size.x / 2) > player2.Get_bounds().min.x && CheckPaddleCollision(player2) && 
             Vector2.Dot(player2.Get_bounds().ClosestPoint(transform.position).normalized, velocity.normalized) > 0)
         {
-            if ((player2.Get_bounds().ClosestPoint(transform.position).y == player2.Get_bounds().max.y ||
+            if ((player2.Get_bounds().ClosestPoint(transform.position).y == player2.Get_bounds().max.y || //For y-axis collision
                 player2.Get_bounds().ClosestPoint(transform.position).y ==  player2.Get_bounds().min.y) && newPos.x - (bounds.size.x / 2) < player2.Get_bounds().max.x)
             {
                 newPos.y = player2.Get_bounds().ClosestPoint(transform.position).y;
                 movementDirection.y = -movementDirection.y;
                 velocity.y = -velocity.y;
             }
-            else if(player2.Get_bounds().ClosestPoint(transform.position).x == player2.Get_bounds().min.x)
+            else if(player2.Get_bounds().ClosestPoint(transform.position).x == player2.Get_bounds().min.x) //For x-axis collision
             {
                 newPos.x = player2.Get_bounds().ClosestPoint(transform.position).x - (bounds.size.x / 2);
                 movementDirection.x = -movementDirection.x;
@@ -136,12 +133,6 @@ public class Ball : MonoBehaviour
     public bool CheckPaddleCollision(Player player)
     {
         return newPos.y > player.Get_bounds().min.y && newPos.y < player.Get_bounds().max.y;
-    }
-
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawCube(transform.position, bounds.size);
     }
 
 }

@@ -41,9 +41,4 @@ public class Player : MonoBehaviour
     {
         return bounds;
     }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawCube(transform.position, bounds.size);
-    }
 }

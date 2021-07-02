@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7754064187958860545
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477707063064244593}
+  - component: {fileID: 1471090047608674437}
+  - component: {fileID: 3656244634841785344}
+  - component: {fileID: 7630280720321436074}
+  - component: {fileID: 116592429097582629}
+  m_Layer: 0
+  m_Name: Bullet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1477707063064244593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754064187958860545}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.24, y: -2.95, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1471090047608674437
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754064187958860545}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &3656244634841785344
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754064187958860545}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &7630280720321436074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754064187958860545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd5bcf2d51c44f45913c6c042ff55e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  movementDirection: {x: 0, y: 0}
+  objBounds: {fileID: 116592429097582629}
+--- !u!114 &116592429097582629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7754064187958860545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  borderName: Bullet
+  rect:
+    serializedVersion: 2
+    x: -0.29
+    y: -3.1000001
+    width: 0.1
+    height: 0.3
+  scaleBounds: {x: 1, y: 1}
+  addBounds: {x: 0, y: 0}
+  borders:
+  - p1: {x: 0, y: 0}
+    p2: {x: 0, y: 0}
+    normal: {x: 0, y: 0}
+    hitPoint: {x: 0, y: 0}
+    borderName: 
+  - p1: {x: 0, y: 0}
+    p2: {x: 0, y: 0}
+    normal: {x: 0, y: 0}
+    hitPoint: {x: 0, y: 0}
+    borderName: 
+  - p1: {x: 0, y: 0}
+    p2: {x: 0, y: 0}
+    normal: {x: 0, y: 0}
+    hitPoint: {x: 0, y: 0}
+    borderName: 
+  - p1: {x: 0, y: 0}
+    p2: {x: 0, y: 0}
+    normal: {x: 0, y: 0}
+    hitPoint: {x: 0, y: 0}
+    borderName: 
+  corners:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  hitBorder:
+    p1: {x: 0, y: 0}
+    p2: {x: 0, y: 0}
+    normal: {x: 0, y: 0}
+    hitPoint: {x: 0, y: 0}
+    borderName: 
+  hitMeBorder: []

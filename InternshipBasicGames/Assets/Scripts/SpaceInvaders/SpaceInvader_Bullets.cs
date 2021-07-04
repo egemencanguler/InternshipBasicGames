@@ -22,13 +22,25 @@ public class SpaceInvader_Bullets : MonoBehaviour
         movement = movementDirection.normalized * speed * Time.deltaTime;
         newPos += movement;
 
-        var hit = VektorProperties.ColliderIntersec((Vector2)transform.position, movement, SpaceInvaders_Gamecore.instance.alienBoundList, objBounds);
-        if (hit != null && Vector2.Dot(hit.normal, movement.normalized) < 0)
+        var hit = VektorProperties.FoundCollidedGameObject((Vector2)transform.position, movement, SpaceInvaders_Gamecore.instance.BulletCheckList, objBounds);
+        if (hit != null)
         {
+            Debug.Log(hit.borderName);
             if (hit.borderName == "Alien")
             {
                 Destroy(gameObject);
+                hit.GetComponent<SpaceInvaders_Alien>().Dead();
+                
             }
+            else if(hit.borderName == "Player")
+            {
+                Destroy(hit.gameObject);
+            }
+        }
+        
+        if(transform.position.y < -5f  || transform.position.y >5)
+        {
+            Destroy(gameObject);
         }
 
 

@@ -148,3 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canAttack: 0
+  numberAtAlienList: 0
+  timeToAttackMax: 15
+  bullet: {fileID: 7754064187958860545, guid: 77e1900d68a15504194ea62a17a11d6f, type: 3}
+  bulletSpeedMax: 7

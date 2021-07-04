@@ -195,7 +195,58 @@ namespace InternLibrary.Vektors
 
 
         }
+        /// <summary>
+        /// Checks whether an object is touching another object in the direction of movement (in list)
+        /// </summary>
+        public static ObjectBounds FoundCollidedGameObject(Vector2 from, Vector2 to, List<ObjectBounds> objectBounds, ObjectBounds obj)
+        {
+            Vector2 point = new Vector2();
+            Vector2 shortestPoint = new Vector2(Mathf.Infinity, Mathf.Infinity);
+            Borders foundedBorder = new Borders();
+            ObjectBounds foundedObj = null;
 
+            Borders[] objBorders = new Borders[4];
+            objBorders = obj.UpdateBorderAndReturn();
+
+            for (int j = 0; j < objBorders.Length; j++)
+            {
+                var newFrom = objBorders[j].p1;
+                Vector2 movementVector = to + newFrom;
+
+                for (int i = 0; i < objectBounds.Count; i++)
+                {
+                    if (objectBounds[i] == obj)
+                    {
+                        continue;
+                    }
+
+                    var borders = objectBounds[i].UpdateBorderAndReturn();
+                    for (int k = 0; k < borders.Length; k++)
+                    {
+
+                        point = LineSegmentIntersec(newFrom, movementVector, borders[k].p1, borders[k].p2);
+
+                        if (point.magnitude < shortestPoint.magnitude && Vector2.Dot(borders[k].normal, to.normalized) < 0)
+                        {
+                            borders[k].hitPoint = point;
+                            foundedBorder = borders[k];
+                            foundedObj = objectBounds[i];
+                            shortestPoint = point;
+                        }
+                    }
+                }
+            }
+
+            if (foundedBorder.hitPoint.x == -1110) // To check hit is null or not. Ask..
+            {
+                return null;
+            }
+            else
+            {
+                return foundedObj;
+            }
+
+        }
 
         /// <summary>
         /// Rearranges the intersection point to the size of the object

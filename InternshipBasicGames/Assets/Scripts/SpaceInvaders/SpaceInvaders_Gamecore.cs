@@ -5,10 +5,12 @@ using UnityEngine;
 public class SpaceInvaders_Gamecore : MonoBehaviour
 {
     public static SpaceInvaders_Gamecore instance;
-    public List<ObjectBounds> alienBoundList = new List<ObjectBounds>();
+    public List<ObjectBounds> BulletCheckList = new List<ObjectBounds>();
+    public GameObject player;
     private void Awake()
     {
         instance = this;
+        BulletCheckList.Add(player.GetComponent<ObjectBounds>());
     }
     void Start()
     {
@@ -19,6 +21,11 @@ public class SpaceInvaders_Gamecore : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("Game is Over");
     }
 
 }

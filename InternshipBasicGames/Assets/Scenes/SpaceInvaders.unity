@@ -429,7 +429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3b843016e184b40bc19940fb301836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alienBoundList: []
+  BulletCheckList: []
+  player: {fileID: 2139117794}
 --- !u!4 &1312360500
 Transform:
   m_ObjectHideFlags: 0

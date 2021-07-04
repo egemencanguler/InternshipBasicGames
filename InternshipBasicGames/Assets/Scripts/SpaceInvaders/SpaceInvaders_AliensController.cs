@@ -78,8 +78,9 @@ public class SpaceInvaders_AliensController : MonoBehaviour
             for (int k = 0; k < alienNumber.y; k++)
             {
                 AliensList.Add(Instantiate(alienPrefab, iteratorPoints, Quaternion.identity,transform));
-                SpaceInvaders_Gamecore.instance.alienBoundList.Add(AliensList[alienListNumber].GetComponent<ObjectBounds>());
-                if(k == alienNumber.y - 1)
+                SpaceInvaders_Gamecore.instance.BulletCheckList.Add(AliensList[alienListNumber].GetComponent<ObjectBounds>());
+                AliensList[alienListNumber].GetComponent<SpaceInvaders_Alien>().numberAtAlienList = alienListNumber;
+                if (k == alienNumber.y - 1)
                 {
                     AliensList[alienListNumber].GetComponent<SpaceInvaders_Alien>().canAttack = true;
                 }
@@ -97,6 +98,7 @@ public class SpaceInvaders_AliensController : MonoBehaviour
 
         
     }
+
 
     private void OnDrawGizmos()
     {

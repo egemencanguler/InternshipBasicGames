@@ -113,8 +113,8 @@ public class MyGridSystem : MonoBehaviour
         {
             for (int k = 0; k <= cols; k++)
             {
-                Debug.DrawLine(new Vector2(gridStartPoint.x, gridStartPoint.y + i), new Vector2(gridStartPoint.x + cols, gridStartPoint.y + i));
-                Debug.DrawLine(new Vector2(gridStartPoint.x + k, gridStartPoint.y), new Vector2(gridStartPoint.x + k, gridStartPoint.y + rows));
+                Debug.DrawLine(new Vector2(transform.position.x , transform.position.y + i), new Vector2(transform.position.x + cols, transform.position.y + i));
+                Debug.DrawLine(new Vector2(transform.position.x + k, transform.position.y), new Vector2(transform.position.x + k, transform.position.y + rows));
             }
 
         }

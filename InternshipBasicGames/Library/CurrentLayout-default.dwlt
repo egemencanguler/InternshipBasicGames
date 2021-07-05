@@ -116,7 +116,7 @@ MonoBehaviour:
   m_MinSize: {x: 609, y: 492}
   m_MaxSize: {x: 18004, y: 14042}
   vertical: 0
-  controlID: 145
+  controlID: 79
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 101, y: 242}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 59
+  controlID: 35
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -426,9 +426,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.9066143, y: 0.8040538, z: -17.521484}
+    m_Target: {x: -8.763638, y: -0.100079276, z: -19.384974}
     speed: 2
-    m_Value: {x: -3.9066143, y: 0.8040538, z: -17.521484}
+    m_Value: {x: -8.4978895, y: 0.10102736, z: -19.255661}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -478,9 +478,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 11.45687
+    m_Target: 8.246335
     speed: 2
-    m_Value: 11.996722
+    m_Value: 7.5654454
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -534,8 +534,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 72390000
-      m_LastClickedID: 14706
+      m_SelectedIDs: 78390000
+      m_LastClickedID: 14712
       m_ExpandedIDs: 64fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -599,19 +599,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/SnakeGrid
+    - Assets/Scripts/InternLibrary
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts/SnakeGrid
+  - Assets/Scripts/InternLibrary
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\ogulcan\Desktop\InternshipBasicGames\InternshipBasicGames
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ce390000
-    m_LastClickedID: 14798
+    m_SelectedIDs: d0390000
+    m_LastClickedID: 14800
     m_ExpandedIDs: 00000000be390000c0390000ca39000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -667,7 +667,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000625c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

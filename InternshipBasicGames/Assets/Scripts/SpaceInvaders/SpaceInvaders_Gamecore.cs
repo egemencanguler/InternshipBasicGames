@@ -7,6 +7,8 @@ public class SpaceInvaders_Gamecore : MonoBehaviour
     public static SpaceInvaders_Gamecore instance;
     public List<ObjectBounds> BulletCheckList = new List<ObjectBounds>();
     public GameObject player;
+    public GameObject WonPanel;
+    public GameObject LosePanel;
     private void Awake()
     {
         instance = this;
@@ -23,9 +25,18 @@ public class SpaceInvaders_Gamecore : MonoBehaviour
         
     }
 
-    public void GameOver()
+    public void GameOver(int status)
     {
-        Debug.Log("Game is Over");
+        if(status == 1)
+        {
+            Time.timeScale = 0;
+            WonPanel.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 0;
+            LosePanel.SetActive(true);
+        }
     }
 
 }

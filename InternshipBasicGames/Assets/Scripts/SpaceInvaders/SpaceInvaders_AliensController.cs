@@ -45,7 +45,6 @@ public class SpaceInvaders_AliensController : MonoBehaviour
         newPos += movement;
 
         var hit = VektorProperties.ColliderIntersec((Vector2)transform.position, movement, checkCollisionWith, objBounds);
-        Debug.Log(hit);
         if (hit != null && Vector2.Dot(hit.normal, movement.normalized) < 0)
         {
             if(hit.borderName == "Wall")

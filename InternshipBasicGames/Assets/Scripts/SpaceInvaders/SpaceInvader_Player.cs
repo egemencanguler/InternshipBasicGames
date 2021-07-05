@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class SpaceInvader_Player : MonoBehaviour
 {
     public float movementSpeed = 1;
     public Rect allowedArea;
+    public int lives;
+    public int score;
+    public TextMeshProUGUI livesText;
+    public TextMeshProUGUI scoreText;
 
     [Header("Bullets")]
     public GameObject bullet;
@@ -33,5 +38,24 @@ public class SpaceInvader_Player : MonoBehaviour
         }
 
         transform.position = newPos;
+    }
+
+    public void GetScore()
+    {
+        score += 10;
+
+        scoreText.text = "Score: " + score;
+    }
+
+    public void TakeDamage()
+    {
+        lives--;
+
+        livesText.text = "Lives: " + lives;
+
+        if(lives <= 0)
+        {
+            SpaceInvaders_Gamecore.instance.GameOver(-1);
+        }
     }
 }

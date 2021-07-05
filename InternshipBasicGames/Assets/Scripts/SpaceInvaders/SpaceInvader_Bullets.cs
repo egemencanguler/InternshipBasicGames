@@ -25,16 +25,17 @@ public class SpaceInvader_Bullets : MonoBehaviour
         var hit = VektorProperties.FoundCollidedGameObject((Vector2)transform.position, movement, SpaceInvaders_Gamecore.instance.BulletCheckList, objBounds);
         if (hit != null)
         {
-            Debug.Log(hit.borderName);
             if (hit.borderName == "Alien")
             {
                 Destroy(gameObject);
+                SpaceInvaders_Gamecore.instance.player.GetComponent<SpaceInvader_Player>().GetScore();
                 hit.GetComponent<SpaceInvaders_Alien>().Dead();
                 
             }
             else if(hit.borderName == "Player")
             {
-                Destroy(hit.gameObject);
+                Destroy(gameObject);
+                hit.GetComponent<SpaceInvader_Player>().TakeDamage();
             }
         }
         

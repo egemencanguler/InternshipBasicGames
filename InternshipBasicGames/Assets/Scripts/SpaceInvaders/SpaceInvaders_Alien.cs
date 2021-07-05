@@ -56,7 +56,7 @@ public class SpaceInvaders_Alien : MonoBehaviour
 
         if (alienListController.AliensList.Count == 0)
         {
-            SpaceInvaders_Gamecore.instance.GameOver();
+            SpaceInvaders_Gamecore.instance.GameOver(1);
 
         }
     }

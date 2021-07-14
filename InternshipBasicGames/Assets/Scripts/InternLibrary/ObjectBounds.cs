@@ -11,8 +11,6 @@ public class ObjectBounds : MonoBehaviour
     public Borders[] borders = new Borders[4];
     public Vector2[] corners = new Vector2[4];
 
-    public Borders hitBorder;
-    public List<Borders> hitMeBorder;
     /// <summary>
     /// Updates the boundaries of the object
     /// </summary>

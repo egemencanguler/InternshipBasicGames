@@ -79,10 +79,46 @@ namespace InternLibrary.Vektors
             {
                 return foundedBorder;
             }
-
-           
-
         }
+
+        public static ObjectBounds RayIntersecReturnObj(Vector2 from, Vector2 to, List<ObjectBounds> objectBounds)
+        {
+            Vector2 movementVector = to + from;
+            Vector2 point = new Vector2();
+            Vector2 shortestPoint = new Vector2(Mathf.Infinity, Mathf.Infinity);
+            Borders foundedBorder = new Borders();
+            ObjectBounds foundedObj = null;
+
+            for (int i = 0; i < objectBounds.Count; i++)
+            {
+                var borders = objectBounds[i].UpdateBorderAndReturn();
+                for (int k = 0; k < borders.Length; k++)
+                {
+
+                    point = LineSegmentIntersec(from, movementVector, borders[k].p1, borders[k].p2);
+
+                    if (point.magnitude < shortestPoint.magnitude)
+                    {
+                        borders[k].hitPoint = point;
+                        foundedBorder = borders[k];
+                        foundedObj = objectBounds[i];
+                        shortestPoint = point;
+                    }
+                }
+            }
+            if (foundedBorder.hitPoint.x == -1110) // To check hit is null or not. Ask..
+            {
+                return null;
+            }
+            else
+            {
+                return foundedObj;
+            }
+        }
+
+
+
+
 
         /// <summary>
         /// Checks whether an object is touching another object in the direction of movement

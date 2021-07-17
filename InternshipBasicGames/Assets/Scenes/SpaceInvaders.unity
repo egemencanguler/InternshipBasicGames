@@ -572,7 +572,6 @@ MonoBehaviour:
   objBounds: {fileID: 586978663}
   alienPrefab: {fileID: 2115750610196175846, guid: 9428b9ce0002ada4bb46b1401e601ad9,
     type: 3}
-  iteratorPoints: {x: 3.7499995, y: 2.94}
   AliensList: []
   checkCollisionWith:
   - {fileID: 1830464696}
@@ -591,48 +590,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: 
+  objectTag: 0
   rect:
     serializedVersion: 2
-    x: -3.54
+    x: -3.52
     y: 0.30999994
     width: 7.02
     height: 2.88
   scaleBounds: {x: 7.02, y: 2.88}
   addBounds: {x: 0, y: 0}
   borders:
-  - p1: {x: -3.54, y: 0.30999994}
-    p2: {x: -3.54, y: 3.19}
+  - p1: {x: -3.52, y: 0.30999994}
+    p2: {x: -3.52, y: 3.19}
     normal: {x: -1, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
-  - p1: {x: -3.54, y: 3.19}
-    p2: {x: 3.48, y: 3.19}
+    objectTag: 0
+  - p1: {x: -3.52, y: 3.19}
+    p2: {x: 3.5, y: 3.19}
     normal: {x: 0, y: 1}
     hitPoint: {x: 0, y: 0}
-    borderName: 
-  - p1: {x: 3.48, y: 3.19}
-    p2: {x: 3.48, y: 0.30999994}
+    objectTag: 0
+  - p1: {x: 3.5, y: 3.19}
+    p2: {x: 3.5, y: 0.30999994}
     normal: {x: 1, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
-  - p1: {x: 3.48, y: 0.30999994}
-    p2: {x: -3.54, y: 0.30999994}
+    objectTag: 0
+  - p1: {x: 3.5, y: 0.30999994}
+    p2: {x: -3.52, y: 0.30999994}
     normal: {x: 0, y: -1}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
-  - {x: -3.54, y: 0.30999994}
-  - {x: -3.54, y: 3.19}
-  - {x: 3.48, y: 3.19}
-  - {x: 3.48, y: 0.30999994}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
+  - {x: -3.52, y: 0.30999994}
+  - {x: -3.52, y: 3.19}
+  - {x: 3.5, y: 3.19}
+  - {x: 3.5, y: 0.30999994}
 --- !u!4 &586978664
 Transform:
   m_ObjectHideFlags: 0
@@ -641,7 +633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586978661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 1.75, z: 0}
+  m_LocalPosition: {x: -0.01, y: 1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -676,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: Wall
+  objectTag: 1
   rect:
     serializedVersion: 2
     x: -6
@@ -690,34 +682,27 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
 --- !u!4 &665601847
 Transform:
   m_ObjectHideFlags: 0
@@ -784,7 +769,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -1148,7 +1133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: Wall
+  objectTag: 1
   rect:
     serializedVersion: 2
     x: 5
@@ -1162,34 +1147,27 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
 --- !u!4 &1830464697
 Transform:
   m_ObjectHideFlags: 0
@@ -1444,7 +1422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: Player
+  objectTag: 2
   rect:
     serializedVersion: 2
     x: -0.47
@@ -1458,34 +1436,27 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
 --- !u!23 &2139117796
 MeshRenderer:
   m_ObjectHideFlags: 0

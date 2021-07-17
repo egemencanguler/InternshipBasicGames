@@ -7,7 +7,7 @@ namespace Sokoban3D
     public class TurretBullet : MonoBehaviour, IMoveableObjects
     {
         public MyGridSystemXZ gridSystem;
-        public float yOffset;
+        public Vector3 offSet;
         public MyGridXZ nextGrid, currentGrid;
         public GameObject turretBullet;
 
@@ -20,37 +20,39 @@ namespace Sokoban3D
         public ObjectList.NextGridIs nextGridIs;
         public bool willHitPlayer;
         private Player player;
-        private void Awake()
-        {
 
 
-        }
         private void OnEnable()
         {
             turretBullet = transform.GetChild(0).gameObject;
             gridSystem = FindObjectOfType<MyGridSystemXZ>();
-            var gridPos = gridSystem.WorldPositionToGrid(transform.position);
+            var gridPos = gridSystem.WorldPosToGridPos(transform.position);
             gridPos += movementDirection;
-            currentGrid = gridSystem.GetCurrentGrid(gridPos);
-            if(currentGrid.placedObjTag == ObjectList.PLAYER)
+            currentGrid = gridSystem.GetGrid(gridPos);
+            if (currentGrid.placedObjTag == ObjectList.PLAYER)// for the first movement
             {
                 currentCommand = new WaitingCommand(this);
-                //ReplaceTheObject(currentGrid, true);
                 player = currentGrid.placedObj.GetComponent<Player>();
                 nextGridIs = ObjectList.NextGridIs.Player;
             }
             else if (currentGrid.openGrid)
             {
                 nextGridIs = ObjectList.NextGridIs.EmptyGrid;
-                ReplaceTheObject(currentGrid,false);
-                var nextPlacedGrid = gridSystem.GetCurrentGrid(gridPos + movementDirection);
+                ReplaceTheObject(currentGrid, false);
+                var nextPlacedGrid = gridSystem.GetGrid(gridPos + movementDirection);
                 currentCommand = new ReplaceCommand(this, nextPlacedGrid, currentGrid);
+            }
+            else if (!nextGrid.openGrid)
+            {
+                currentCommand = new WaitingCommand(this);
+                ReplaceTheObject(currentGrid, true);
+                nextGridIs = ObjectList.NextGridIs.Wall;
             }
         }
 
         void Update()
         {
-            if (!nextGridIs.Equals(ObjectList.NextGridIs.None))
+            if (!nextGridIs.Equals(ObjectList.NextGridIs.None))//animation section
             {
                 var pos = transform.position;
                 roadTaken += speed * Time.deltaTime;
@@ -58,9 +60,9 @@ namespace Sokoban3D
                 pos += movement;
                 if (nextGridIs.Equals(ObjectList.NextGridIs.Wall))
                 {
-                    if (roadTaken >= gridSystem.gridSize/2)
+                    if (roadTaken >= gridSystem.gridSize / 2)
                     {
-                        pos = currentGrid.worldPosition;
+                        pos = currentGrid.worldPosition + offSet;
                         ResetMoveAnimation();
                         turretBullet.SetActive(false);
                     }
@@ -69,7 +71,7 @@ namespace Sokoban3D
                 {
                     if (roadTaken >= gridSystem.gridSize / 2)
                     {
-                        pos = currentGrid.worldPosition;
+                        pos = currentGrid.worldPosition + offSet;
                         ResetMoveAnimation();
                         turretBullet.SetActive(false);
 
@@ -79,10 +81,11 @@ namespace Sokoban3D
                         willHitPlayer = false;
                     }
                 }
-                else{
+                else
+                {
                     if (roadTaken >= gridSystem.gridSize)
                     {
-                        pos = currentGrid.worldPosition;
+                        pos = currentGrid.worldPosition + offSet;
                         ResetMoveAnimation();
 
                     }
@@ -98,13 +101,8 @@ namespace Sokoban3D
         {
             nextGrid = placedGrid;
 
-            if (nextGrid.placedObjTag == ObjectList.WALL)
-            {
-                currentCommand = new WaitingCommand(this);
-                ReplaceTheObject(currentGrid,true);
-                nextGridIs = ObjectList.NextGridIs.Wall;
-            }
-            else if(nextGrid.placedObjTag == ObjectList.PLAYER || willHitPlayer)
+            
+            if (nextGrid.placedObjTag == ObjectList.PLAYER || willHitPlayer)//coliding check
             {
                 currentCommand = new WaitingCommand(this);
                 ReplaceTheObject(currentGrid, true);
@@ -112,15 +110,21 @@ namespace Sokoban3D
                 nextGridIs = ObjectList.NextGridIs.Player;
                 Debug.Log("Player is death");
             }
+            else if(!nextGrid.openGrid)
+            {
+                currentCommand = new WaitingCommand(this);
+                ReplaceTheObject(currentGrid, true);
+                nextGridIs = ObjectList.NextGridIs.Wall;
+            }
             else
             {
-                var nextPlacedGrid = gridSystem.GetCurrentGrid(nextGrid.gridPosition + movementDirection);
-                ReplaceTheObject(nextGrid,false);
+                var nextPlacedGrid = gridSystem.GetGrid(nextGrid.gridPosition + movementDirection);
+                ReplaceTheObject(nextGrid, false);
                 currentCommand = new ReplaceCommand(this, nextPlacedGrid, currentGrid);
                 nextGridIs = ObjectList.NextGridIs.EmptyGrid;
             }
 
-            
+
         }
 
         public void Waiting()
@@ -134,11 +138,11 @@ namespace Sokoban3D
             {
                 turretBullet.SetActive(true);
             }
-            var nextPlacedGrid = gridSystem.GetCurrentGrid(placedGrid.gridPosition + movementDirection);
-            ReplaceTheObject(placedGrid,false);
+            var nextPlacedGrid = gridSystem.GetGrid(placedGrid.gridPosition + movementDirection);
+            ReplaceTheObject(placedGrid, false);
             currentCommand = new ReplaceCommand(this, nextPlacedGrid, currentGrid);
             ResetMoveAnimation();
-            transform.position = currentGrid.worldPosition;
+            transform.position = currentGrid.worldPosition + offSet;
         }
 
         public void ResetMoveAnimation()
@@ -148,14 +152,14 @@ namespace Sokoban3D
             nextGrid = new MyGridXZ();
         }
 
-        public void ReplaceTheObject(MyGridXZ placedGrid,bool isDestroyed)
+        public void ReplaceTheObject(MyGridXZ placedGrid, bool isDestroyed)
         {
-            
+
             gridSystem.RemoveSolidObject_Limited(currentGrid.gridPosition);
             currentGrid = placedGrid;
             if (!isDestroyed)
             {
-                gridSystem.PlaceSolidObj_Limited(placedGrid.gridPosition, yOffset, gameObject, ObjectList.TURRETBULLET);
+                gridSystem.PlaceSolidObj_Limited(placedGrid.gridPosition, gameObject, ObjectList.TURRETBULLET);
             }
         }
     }

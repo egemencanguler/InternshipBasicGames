@@ -81,6 +81,9 @@ namespace InternLibrary.Vektors
             }
         }
 
+        /// <summary>
+        /// Checks whether the entered vector hits the boundary of the object and return that obj
+        /// </summary>
         public static ObjectBounds RayIntersecReturnObj(Vector2 from, Vector2 to, List<ObjectBounds> objectBounds)
         {
             Vector2 movementVector = to + from;

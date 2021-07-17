@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSystem: {fileID: 0}
-  yOffset: 2
+  offSet: {x: 0, y: 2, z: 0}
   nextGrid:
     worldPosition: {x: 0, y: 0, z: 0}
     gridPosition: {x: -1, y: 0, z: 0}
@@ -127,7 +127,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 14697b7e9b1e7fa4c9ff0a1721232794, type: 2}
+  - {fileID: 2100000, guid: e8d81f0a4e4ce49419c5c7d5e9035f90, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

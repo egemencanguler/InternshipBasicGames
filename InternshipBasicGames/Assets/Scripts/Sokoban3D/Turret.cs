@@ -8,11 +8,11 @@ namespace Sokoban3D
     public class Turret : MonoBehaviour,ITurret
     {
         public MyGridSystemXZ gridSystem;
-        public float yOffset;
+        public Vector3 offSet;
         public MyGridXZ nextGrid, currentGrid;
         public Player player;
-        public int maxTurretShot;
         public int roundToShot;
+        public int remainingRoundToShot;
         public TextMeshProUGUI shotCounterText;
         public GameObject turretBulletPrefab;
         public ICommand currentCommand;
@@ -23,29 +23,28 @@ namespace Sokoban3D
         // Start is called before the first frame update
         void Start()
         {
-           // roundToShot = maxTurretShot;
-            shotCounterText.text = "" + roundToShot;
-            var gridPos = gridSystem.WorldPositionToGrid(transform.position);
-            currentGrid = gridSystem.GetCurrentGrid(gridPos);
-            gridSystem.PlaceSolidObj_Limited(gridPos, yOffset, gameObject, ObjectList.TURRET);
-            currentCommand = new ReadyToShotCommand(this, roundToShot, roundToShot - 1);
+            remainingRoundToShot = roundToShot;
+            shotCounterText.text = "" + remainingRoundToShot;
+
+            currentGrid = gridSystem.FindGridAccordingToWorldPos(transform.position);
+            gridSystem.PlaceSolidObj_Limited(currentGrid.gridPosition, gameObject, ObjectList.TURRET);
+            transform.position = currentGrid.worldPosition + offSet;
+            currentCommand = new ReadyToShotCommand(this, remainingRoundToShot, remainingRoundToShot - 1);
         }
 
 
         public void ReadyToShoot(int counter)
         {
-            roundToShot = counter;
-            if(roundToShot == 1)
+            remainingRoundToShot = counter;
+            if(remainingRoundToShot == 1)
             {
-                
-                Debug.Log("Shot");
                 currentCommand = new TurretShotCommand(this);
             }
             else
             {
-                currentCommand = new ReadyToShotCommand(this, roundToShot, roundToShot - 1);
+                currentCommand = new ReadyToShotCommand(this, remainingRoundToShot, remainingRoundToShot - 1);
             }
-            shotCounterText.text = "" + roundToShot;
+            shotCounterText.text = "" + remainingRoundToShot;
             
         }
 
@@ -59,21 +58,20 @@ namespace Sokoban3D
             //to change script variable area
             var bulletScript = aliveBullet[bulletIterator].GetComponent<TurretBullet>();
             bulletScript.movementDirection = attackDirection;
-           // bulletScript.FirstGridMovement();
-            //
+            //bulletScript.FirstGridMovement();
             aliveBullet[bulletIterator].SetActive(true);
             turretBulletPrefab.SetActive(true);
             player.commandManager.turretBullets.Add(bulletScript);
 
-            roundToShot = 3;
-            ReadyToShoot(roundToShot);
+            remainingRoundToShot = roundToShot;
+            ReadyToShoot(remainingRoundToShot);
         }
 
         public void RemoveTheBullet()
         {
 
-            roundToShot = 1;
-            ReadyToShoot(roundToShot);
+            remainingRoundToShot = 1;
+            ReadyToShoot(remainingRoundToShot);
 
             var bulletScript = aliveBullet[bulletIterator].GetComponent<TurretBullet>();
             player.commandManager.turretBullets.Remove(bulletScript);

@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2a7aec7dae1e35a46ade9a5e1c48926d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -92,6 +92,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a4437929da3fc64ba367fbd9dcbee41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridPos: {x: 8, y: 0, z: 8}
-  Yoffset: 0
+  offSet: {x: 0, y: -0.67, z: 0}
   gridSystem: {fileID: 0}
+  currentGrid:
+    worldPosition: {x: 0, y: 0, z: 0}
+    gridPosition: {x: -1, y: 0, z: 0}
+    placedObj: {fileID: 0}
+    placedObjTag: 
+    placedUnsolidObj: {fileID: 0}
+    placedUnsolidObjTag: 
+    openGrid: 0

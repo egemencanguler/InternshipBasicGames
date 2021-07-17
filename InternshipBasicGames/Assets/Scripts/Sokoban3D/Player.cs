@@ -17,18 +17,16 @@ namespace Sokoban3D
         private bool dragging;
         private enum MouseDirection { Left, Right, Up, Down, None }
         private MouseDirection mouseDirection = MouseDirection.None;
-
+        //Movement
         public Vector3 movementDirection = Vector3.zero;
         public float speed;
         public Vector3 movement;
         public float roadTaken;
-
+        //Commands
         public ICommand currentCommand;
         public bool turnEnding,playerIsDeath;
-
         public ObjectList.NextGridIs nextGridIs = ObjectList.NextGridIs.None;
         private Cubes draggingCube;
-
         //Ragdoll
         private Rigidbody[] ragdollBodies;
         private Collider[] ragdollColliders;
@@ -42,19 +40,18 @@ namespace Sokoban3D
             FindInitialTransform();
             ToggleRagdoll(false);
         }
-        // Start is called before the first frame update
+
+
         void Start()
         {
-            var gridPos = gridSystem.WorldPositionToGrid(transform.position);
-            currentGrid = gridSystem.GetCurrentGrid(gridPos);
+            currentGrid = gridSystem.FindGridAccordingToWorldPos(transform.position);
             transform.position = currentGrid.worldPosition;
             nextGrid = new MyGridXZ();
         }
 
-        // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.R) && movementDirection == Vector3.zero)
+            if (Input.GetKeyDown(KeyCode.R) && movementDirection == Vector3.zero)//to undo
             {
                 if (playerIsDeath)
                 {
@@ -65,14 +62,14 @@ namespace Sokoban3D
                 commandManager.UndoCommands();
             }
 
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0))//to reset mouse movement
             {
                 startMousePos = Vector2.zero;
                 mouseDirection = MouseDirection.None;
                 dragging = false;
             }
 
-            if (movementDirection == Vector3.zero && !playerIsDeath)
+            if (movementDirection == Vector3.zero && !playerIsDeath) //to get mouse swipe
             {
 
                 if (Input.GetMouseButtonDown(0))
@@ -138,55 +135,100 @@ namespace Sokoban3D
                 }
 
 
-                #region KeyboardInput 
-                /*
-                if (Input.GetKeyDown(KeyCode.W))
-                {
-                    movementDirection = new Vector3(0, 0, 1);
-                    transform.rotation = Quaternion.Euler(0, 0, 0);
-                }
-                else if (Input.GetKeyDown(KeyCode.S))
-                {
-                    movementDirection = new Vector3(0, 0, -1);
-                    transform.rotation = Quaternion.Euler(0, 180, 0);
-                }
-                else if (Input.GetKeyDown(KeyCode.D))
-                {
-                    movementDirection = new Vector3(1, 0, 0);
-                    transform.rotation = Quaternion.Euler(0, 90, 0);
-                }
-                else if (Input.GetKeyDown(KeyCode.A))
-                {
-                    movementDirection = new Vector3(-1, 0, 0);
-                    transform.rotation = Quaternion.Euler(0, 270, 0);
-                }*/
-                #endregion
             } // Input Area
 
-            if (nextGrid.gridPosition.x == -1 && movementDirection != Vector3.zero)
+            if (nextGrid.gridPosition.x == -1 && movementDirection != Vector3.zero)//to check new grid position and colliding
             {
                 var gridPos = currentGrid.gridPosition;
                 gridPos += movementDirection;
-                nextGrid = gridSystem.GetCurrentGrid(gridPos);
+                nextGrid = gridSystem.GetGrid(gridPos);
                 ConfigureNextGridMove();
             }
 
 
-            if (turnEnding)
+            if (turnEnding)//to execute all object commands
             {
                 commandManager.ExecuteAllCommand();
-                //transform.position = currentGrid.worldPosition;
                 turnEnding = false;
                 
             }
 
 
-
+            // Plays animations
             if (!nextGridIs.Equals(ObjectList.NextGridIs.None))
             {
-                
-                PlayMovementAnimation();
-            }
+
+                animator.SetBool("run", true);
+                var pos = transform.position;
+                roadTaken += speed * Time.deltaTime;
+                movement = speed * Time.deltaTime * movementDirection;
+                pos += movement;
+
+                if (nextGridIs.Equals(ObjectList.NextGridIs.Wall))
+                {
+                    if (roadTaken >= gridSystem.gridSize / 2)
+                    {
+                        animator.SetTrigger("wallHit");
+                        mouseDirection = MouseDirection.None;
+                        ResetMoveAnimation();
+                        pos = currentGrid.worldPosition;
+                    }
+                }
+                else if (nextGridIs.Equals(ObjectList.NextGridIs.TurretBullet))
+                {
+                    if (roadTaken >= gridSystem.gridSize / 2)
+                    {
+                        mouseDirection = MouseDirection.None;
+                        ResetMoveAnimation();
+                        pos = currentGrid.worldPosition;
+                    }
+                }
+                else if (nextGridIs.Equals(ObjectList.NextGridIs.SAW))
+                {
+                    if (roadTaken >= gridSystem.gridSize / 2)
+                    {
+                        mouseDirection = MouseDirection.None;
+                        ResetMoveAnimation();
+                        pos = currentGrid.worldPosition;
+                    }
+                }
+                else if (nextGridIs.Equals(ObjectList.NextGridIs.Cube))
+                {
+                    if (draggingCube.nextGridIs.Equals(ObjectList.NextGridIs.EmptyGrid))
+                    {
+                        animator.SetBool("pushing", true);
+                        draggingCube.PushMe(movement);
+                        if (roadTaken >= gridSystem.gridSize)
+                        {
+                            draggingCube.OnEndPushAnimation();
+                            pos = currentGrid.worldPosition;
+                            ResetMoveAnimation();
+                        }
+                    }
+                    else
+                    {
+                        if (roadTaken >= gridSystem.gridSize / 2)
+                        {
+                            animator.SetTrigger("wallHit");
+                            mouseDirection = MouseDirection.None;
+                            draggingCube.OnEndPushAnimation();
+                            ResetMoveAnimation();
+                            pos = currentGrid.worldPosition;
+                        }
+                    }
+                }
+                else
+                {
+                    if (roadTaken >= gridSystem.gridSize)
+                    {
+                        pos = currentGrid.worldPosition;
+                        ResetMoveAnimation();
+
+                    }
+                }
+
+                transform.position = pos;
+            } 
          
 
         }
@@ -196,7 +238,7 @@ namespace Sokoban3D
         {
             gridSystem.RemoveSolidObject_Limited(currentGrid.gridPosition);
             currentGrid = placedGrid;
-            gridSystem.PlaceSolidObj_Limited(placedGrid.gridPosition, 0, gameObject, ObjectList.PLAYER);
+            gridSystem.PlaceSolidObj_Limited(placedGrid.gridPosition, gameObject, ObjectList.PLAYER);
             
         }
 
@@ -226,82 +268,10 @@ namespace Sokoban3D
             nextGrid = new MyGridXZ();
         }
 
-        public void PlayMovementAnimation()
-        {
-            animator.SetBool("run", true);
-            var pos = transform.position;
-            roadTaken += speed * Time.deltaTime;
-            movement = speed * Time.deltaTime * movementDirection;
-            pos += movement;
 
-            if (nextGridIs.Equals(ObjectList.NextGridIs.Wall))
-            {
-                if (roadTaken >= gridSystem.gridSize / 2)
-                {
-                    animator.SetTrigger("wallHit");
-                    mouseDirection = MouseDirection.None;
-                    ResetMoveAnimation();
-                    pos = currentGrid.worldPosition;
-                }
-            }
-            else if (nextGridIs.Equals(ObjectList.NextGridIs.TurretBullet))
-            {
-                if (roadTaken >= gridSystem.gridSize / 2)
-                {
-                    mouseDirection = MouseDirection.None;
-                    ResetMoveAnimation();
-                    pos = currentGrid.worldPosition;
-                }
-            }
-            else if (nextGridIs.Equals(ObjectList.NextGridIs.SAW))
-            {
-                if (roadTaken >= gridSystem.gridSize / 2)
-                {
-                    mouseDirection = MouseDirection.None;
-                    ResetMoveAnimation();
-                    pos = currentGrid.worldPosition;
-                }
-            }
-            else if (nextGridIs.Equals(ObjectList.NextGridIs.Cube))
-            {
-                if (draggingCube.nextGridIs.Equals(ObjectList.NextGridIs.EmptyGrid))
-                {
-                    animator.SetBool("pushing", true);
-                    draggingCube.PushMe(movement);
-                    if (roadTaken >= gridSystem.gridSize)
-                    {
-                        draggingCube.OnEndPushAnimation();
-                        pos = currentGrid.worldPosition;
-                        ResetMoveAnimation();
-                    }
-                }
-                else
-                {
-                    if (roadTaken >= gridSystem.gridSize / 2)
-                    {
-                        animator.SetTrigger("wallHit");
-                        mouseDirection = MouseDirection.None;
-                        draggingCube.OnEndPushAnimation();
-                        ResetMoveAnimation();
-                        pos = currentGrid.worldPosition;
-                    }
-                }
-            }
-            else
-            {
-                if (roadTaken >= gridSystem.gridSize)
-                {
-                    pos = currentGrid.worldPosition;
-                    ResetMoveAnimation();
-
-                }
-            }
-
-            transform.position = pos;
-        }
         public void ConfigureNextGridMove()
         {
-            if (nextGrid.placedObjTag == ObjectList.WALL)
+            if (nextGrid.placedObjTag == ObjectList.WALL || nextGrid.placedObjTag == ObjectList.TURRET)
             {
                 nextGridIs = ObjectList.NextGridIs.Wall;
             }
@@ -310,7 +280,7 @@ namespace Sokoban3D
                 var turretbullet = nextGrid.placedObj.GetComponent<TurretBullet>();
                 Vector2 playerMovement = new Vector2(movementDirection.x, movementDirection.z);
                 Vector2 turretbulletMovement = new Vector2(turretbullet.movementDirection.x, turretbullet.movementDirection.z);
-                if (Vector2.Dot(playerMovement,turretbulletMovement) < 0)
+                if (Vector2.Dot(playerMovement,turretbulletMovement) < 0)//if the opposite direction
                 {
                     turretbullet.willHitPlayer = true;
                     nextGridIs = ObjectList.NextGridIs.TurretBullet;
@@ -327,12 +297,12 @@ namespace Sokoban3D
             }
             else if((nextGrid.placedObjTag == ObjectList.SAW))
             {
+                
                 var saw = nextGrid.placedObj.GetComponent<Saw>();
                 Vector2 playerMovement = new Vector2(movementDirection.x, movementDirection.z);
                 Vector2 sawMovement = new Vector2(saw.movementDirection[saw.lastMoveDirection].x, saw.movementDirection[saw.lastMoveDirection].z);
-                if (Vector2.Dot(playerMovement, sawMovement) < 0)
+                if (Vector2.Dot(playerMovement, sawMovement) < 0)//if the opposite direction
                 {
-                    
                     saw.willHitPlayer = true;
                     nextGridIs = ObjectList.NextGridIs.SAW;
                     currentCommand = new ReplaceCommand(this, currentGrid, currentGrid);
@@ -349,7 +319,7 @@ namespace Sokoban3D
             {
                 draggingCube = nextGrid.placedObj.GetComponent<Cubes>();
                 draggingCube.GetNextGrid(movementDirection);
-                if (draggingCube.nextGrid.openGrid)
+                if (draggingCube.nextGridIs.Equals(ObjectList.NextGridIs.EmptyGrid))
                 {
                     currentCommand = new ReplaceCommand(this, nextGrid, currentGrid);
                     turnEnding = true;
@@ -363,6 +333,9 @@ namespace Sokoban3D
                 nextGridIs = ObjectList.NextGridIs.EmptyGrid;
             }// if next grid is open
         }
+
+
+        #region For Raggdoll Methods
 
         public void FindInitialTransform()
         {
@@ -405,6 +378,8 @@ namespace Sokoban3D
             }
             playerIsDeath = true;
         }
-        
+
+        #endregion
+
     }
 }

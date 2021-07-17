@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd5bcf2d51c44f45913c6c042ff55e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 6
   movementDirection: {x: 0, y: 0}
   objBounds: {fileID: 116592429097582629}
 --- !u!114 &116592429097582629
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: Bullet
+  objectTag: 0
   rect:
     serializedVersion: 2
     x: -0.29
@@ -122,31 +122,24 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []

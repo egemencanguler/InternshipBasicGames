@@ -168,10 +168,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &100923775
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -266,10 +266,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &112148294
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -364,10 +364,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &210029479
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -457,6 +457,7 @@ MonoBehaviour:
   newPos: {x: 0, y: 0}
   score: 0
   scoreText: {fileID: 690971159}
+  playerType: 0
 --- !u!23 &222931544
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -565,10 +566,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &265987391
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -663,10 +664,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &389695585
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -761,10 +762,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &479517184
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -942,10 +943,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &567863467
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1040,10 +1041,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &689233033
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1323,7 +1324,7 @@ Transform:
   - {fileID: 112148292}
   - {fileID: 389695583}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &952892903
 GameObject:
@@ -1372,10 +1373,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &952892906
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1620,7 +1621,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1014250200
 GameObject:
@@ -1669,10 +1670,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1014250203
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1762,6 +1763,7 @@ MonoBehaviour:
   newPos: {x: 0, y: 0}
   score: 0
   scoreText: {fileID: 976199952}
+  playerType: 1
 --- !u!23 &1074208711
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1870,10 +1872,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1092124835
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1968,10 +1970,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1094920283
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2066,10 +2068,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1132539303
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2164,10 +2166,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1313235412
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2262,10 +2264,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1320416511
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2460,10 +2462,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1446223125
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2558,10 +2560,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1453124888
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2656,10 +2658,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1459600518
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2707,51 +2709,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1459600515}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1554073250
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1554073252}
-  - component: {fileID: 1554073251}
-  m_Layer: 0
-  m_Name: Gamecore
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1554073251
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554073250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc45aecfb27c3a48b8f5e0d630790f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player1: {fileID: 222931541}
-  player2: {fileID: 1074208709}
---- !u!4 &1554073252
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554073250}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.27, y: 4.49, z: -86.234375}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1609165515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,10 +2756,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1609165518
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2897,10 +2854,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1682787937
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2995,10 +2952,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1891372073
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3093,10 +3050,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1894111038
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3191,10 +3148,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &1968612973
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3275,10 +3232,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   movementDirection: {x: 1, y: 0}
-  destroyingPointsLeft: {x: -6.3, y: 0}
-  destroyingPointsRight: {x: 6.3, y: 0}
-  player1: {fileID: 0}
-  player2: {fileID: 0}
+  destroyingPointsLeft: -6.3
+  destroyingPointsRight: 6.3
+  player1: {fileID: 222931541}
+  player2: {fileID: 1074208709}
 --- !u!23 &2022139849
 MeshRenderer:
   m_ObjectHideFlags: 0

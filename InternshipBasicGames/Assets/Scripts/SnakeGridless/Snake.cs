@@ -94,50 +94,22 @@ namespace SnakeGridless
 
 
             var hit = VektorProperties.FoundCollidedGameObject((Vector2)transform.position, movement, colManager.snakeCollideWithList, objBound);
-            if (hit != null)
+            if (hit != null)//collider check
             {
-                if (hit.borderName == "food")
+                if (hit.objectTag.Equals(ObjectTagList.ObjectTags.Food))
                 {
                     colManager.snakeCollideWithList.Remove(hit);
                     Destroy(hit.gameObject);
 
-                   /* Vector2 tailPos = new Vector2();
-
-                    var distance = 0f;
-                    for (int i = snakePathIterator[snakeListIterator]; i > 0; i--)
-                    {
-                        Vector2 p1, p2, direction;
-
-                        p1 = snakePath[i];
-                        p2 = snakePath[i - 1];
-
-                        if (Vector2.Distance(p1, p2) < distance)
-                        {
-                            distance -= Vector2.Distance(p1, p2);
-                            continue;
-                        }
-                        else
-                        {
-                            direction = p2 - p1;
-                            p1 += direction.normalized * distance;
-                            tailPos = p1;
-
-                            //snakePathIterator.Add(i);
-
-                            break;
-                        }
-                    }*/
+                  
                     var tail = Instantiate(snakeTailPrefab, mySnakeList[snakeListIterator].transform.position, Quaternion.identity);
                     mySnakeList.Add(tail);
                     colManager.snakeCollideWithList.Add(tail.GetComponent<ObjectBounds>());
 
                     snakeListIterator++;
                 }
-                /*if (hit.borderName == "tail" && hit.gameObject != mySnakeList[1])
-                {
-                    Time.timeScale = 0;
-                }*/
-            }//collider check
+
+            }
 
 
 

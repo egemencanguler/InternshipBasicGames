@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: food
+  objectTag: 7
   rect:
     serializedVersion: 2
     x: -0.5
@@ -166,22 +166,22 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -242,7 +242,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679360048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.93, z: -6.508275}
+  m_LocalPosition: {x: 0, y: 2.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: food
+  objectTag: 7
   rect:
     serializedVersion: 2
     x: -1.4300001
@@ -293,22 +293,22 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -369,7 +369,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 696808726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.93, y: -2.47, z: -6.508275}
+  m_LocalPosition: {x: -0.93, y: -2.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: 
+  objectTag: 0
   rect:
     serializedVersion: 2
     x: -7.5
@@ -421,22 +421,22 @@ MonoBehaviour:
     p2: {x: -7.5, y: 2.24}
     normal: {x: -1, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: -7.5, y: 2.24}
     p2: {x: -6.5, y: 2.24}
     normal: {x: 0, y: 1}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: -6.5, y: 2.24}
     p2: {x: -6.5, y: 1.24}
     normal: {x: 1, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: -6.5, y: 1.24}
     p2: {x: -7.5, y: 1.24}
     normal: {x: 0, y: -1}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  movementDirection: {x: 19.62274, y: 17.885323}
+  movementDirection: {x: 19.202381, y: 16.426666}
   objBound: {fileID: 1116064135}
   colManager: {fileID: 1378745460}
   gameScreenBorder:
@@ -614,7 +614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: food
+  objectTag: 7
   rect:
     serializedVersion: 2
     x: 1.26
@@ -628,22 +628,22 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -704,7 +704,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405785018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.76, y: -0.39, z: -6.508275}
+  m_LocalPosition: {x: 1.76, y: -0.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: food
+  objectTag: 7
   rect:
     serializedVersion: 2
     x: 3.65
@@ -755,22 +755,22 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -831,7 +831,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1586561628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.15, y: -4.06, z: -6.508275}
+  m_LocalPosition: {x: 4.15, y: -4.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -868,7 +868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: food
+  objectTag: 7
   rect:
     serializedVersion: 2
     x: -5.7
@@ -882,22 +882,22 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -958,7 +958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896206699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.2, y: -3.23, z: -6.508275}
+  m_LocalPosition: {x: -5.2, y: -3.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: food
+  objectTag: 7
   rect:
     serializedVersion: 2
     x: 0.65
@@ -1092,22 +1092,22 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
@@ -1168,7 +1168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2012532120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.15, y: 2.92, z: -6.508275}
+  m_LocalPosition: {x: 1.15, y: 2.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

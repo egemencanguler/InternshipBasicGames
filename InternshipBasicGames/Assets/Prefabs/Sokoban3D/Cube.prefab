@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1831316024864155978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.01, y: 1, z: -1.01}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.47042, y: 1.47042, z: 1.47042}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -92,9 +92,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93aa87415f3a5fe4a851594c32941306, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridPos: {x: 3, y: 0, z: 2}
   gridSystem: {fileID: 0}
-  yOffset: 1
+  offSet: {x: 0, y: 1, z: 0}
   nextGrid:
     worldPosition: {x: 0, y: 0, z: 0}
     gridPosition: {x: 0, y: 0, z: 0}
@@ -113,3 +112,4 @@ MonoBehaviour:
     openGrid: 0
   placedMAT: {fileID: 2100000, guid: 2a7aec7dae1e35a46ade9a5e1c48926d, type: 2}
   normalMAT: {fileID: 2100000, guid: 14697b7e9b1e7fa4c9ff0a1721232794, type: 2}
+  nextGridIs: 7

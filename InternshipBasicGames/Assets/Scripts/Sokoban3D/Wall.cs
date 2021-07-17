@@ -6,22 +6,18 @@ namespace Sokoban3D
 {
     public class Wall : MonoBehaviour
     {
-        public Vector3 gridPos;
         public MyGridSystemXZ gridSystem;
-        public float yOffset;
+        public MyGridXZ currentGrid;
+        public Vector3 offSet;
         // Start is called before the first frame update
         void Start()
         {
-            gridPos = gridSystem.WorldPositionToGrid(transform.position);
-            yOffset = transform.position.y;
-            gridSystem.PlaceSolidObj_Limited(gridPos, yOffset, gameObject, "wall");
+            currentGrid = gridSystem.FindGridAccordingToWorldPos(transform.position);
+            gridSystem.PlaceSolidObj_Limited(currentGrid.gridPosition, gameObject, "wall");
+            transform.position = currentGrid.worldPosition + offSet;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
 
-        }
     }
 }
 

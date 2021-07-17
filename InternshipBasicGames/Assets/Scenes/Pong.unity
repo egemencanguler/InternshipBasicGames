@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: Wall
+  objectTag: 1
   rect:
     serializedVersion: 2
     x: 8.5
@@ -167,34 +167,27 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
 --- !u!114 &111166020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -384,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: RightScore
+  objectTag: 5
   rect:
     serializedVersion: 2
     x: 10.5
@@ -398,34 +391,27 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
 --- !u!1 &359835911
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: Wall
+  objectTag: 1
   rect:
     serializedVersion: 2
     x: -9.5
@@ -552,34 +538,27 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
 --- !u!1 &476047730
 GameObject:
   m_ObjectHideFlags: 0
@@ -623,7 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: Wall
+  objectTag: 1
   rect:
     serializedVersion: 2
     x: -10.5
@@ -637,64 +616,27 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
---- !u!1 &493567033
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 493567034}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &493567034
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493567033}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.501, y: 0.63, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,15 +763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044ef7a1f6ede4243a6b9b23d4bf1b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsBounds:
-  - {fileID: 359835916}
-  - {fileID: 111166019}
-  - {fileID: 1768520323}
-  - {fileID: 476047732}
-  - {fileID: 892759522}
-  - {fileID: 1981467412}
-  - {fileID: 269626916}
-  - {fileID: 733130735}
+  objectsBounds: []
   text: {fileID: 1978579736}
 --- !u!1 &733130734
 GameObject:
@@ -863,7 +797,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: Ball
+  objectTag: 3
   rect:
     serializedVersion: 2
     x: -0.19
@@ -877,34 +811,27 @@ MonoBehaviour:
     p2: {x: -0.19, y: -1.75}
     normal: {x: -1, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: Ball
+    objectTag: 3
   - p1: {x: -0.19, y: -1.75}
     p2: {x: 0.81, y: -1.75}
     normal: {x: 0, y: 1}
     hitPoint: {x: 0, y: 0}
-    borderName: Ball
+    objectTag: 3
   - p1: {x: 0.81, y: -1.75}
     p2: {x: 0.81, y: -2.75}
     normal: {x: 1, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: Ball
+    objectTag: 3
   - p1: {x: 0.81, y: -2.75}
     p2: {x: -0.19, y: -2.75}
     normal: {x: 0, y: -1}
     hitPoint: {x: 0, y: 0}
-    borderName: Ball
+    objectTag: 3
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
 --- !u!114 &733130736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -920,6 +847,7 @@ MonoBehaviour:
   ballSpeed: 5
   movementDirection: {x: 0, y: 1}
   objectbounds: {fileID: 733130735}
+  gameCore: {fileID: 0}
 --- !u!23 &733130737
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1155,7 +1083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: Wall
+  objectTag: 1
   rect:
     serializedVersion: 2
     x: -10.5
@@ -1169,34 +1097,27 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
 --- !u!1 &1688632235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1185,7 @@ MonoBehaviour:
   ballSpeed: 5
   movementDirection: {x: 0, y: -1}
   objectbounds: {fileID: 1768520323}
+  gameCore: {fileID: 0}
 --- !u!114 &1768520323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1276,7 +1198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: Ball
+  objectTag: 3
   rect:
     serializedVersion: 2
     x: 0.39999998
@@ -1290,34 +1212,27 @@ MonoBehaviour:
     p2: {x: 0.39999998, y: 3.93}
     normal: {x: -1, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: Ball
+    objectTag: 3
   - p1: {x: 0.39999998, y: 3.93}
     p2: {x: 1.4, y: 3.93}
     normal: {x: 0, y: 1}
     hitPoint: {x: 0, y: 0}
-    borderName: Ball
+    objectTag: 3
   - p1: {x: 1.4, y: 3.93}
     p2: {x: 1.4, y: 2.93}
     normal: {x: 1, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: Ball
+    objectTag: 3
   - p1: {x: 1.4, y: 2.93}
     p2: {x: 0.39999998, y: 2.93}
     normal: {x: 0, y: -1}
     hitPoint: {x: 0, y: 0}
-    borderName: Ball
+    objectTag: 3
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
 --- !u!23 &1768520324
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1555,7 +1470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: LeftScore
+  objectTag: 4
   rect:
     serializedVersion: 2
     x: -11.5
@@ -1569,31 +1484,24 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []

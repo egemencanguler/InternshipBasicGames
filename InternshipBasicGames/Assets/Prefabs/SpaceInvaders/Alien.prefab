@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51385467d76de541843148b3e645a60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  borderName: Alien
+  objectTag: 6
   rect:
     serializedVersion: 2
     x: 0.96000004
@@ -107,34 +107,27 @@ MonoBehaviour:
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   - p1: {x: 0, y: 0}
     p2: {x: 0, y: 0}
     normal: {x: 0, y: 0}
     hitPoint: {x: 0, y: 0}
-    borderName: 
+    objectTag: 0
   corners:
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
   - {x: 0, y: 0}
-  hitBorder:
-    p1: {x: 0, y: 0}
-    p2: {x: 0, y: 0}
-    normal: {x: 0, y: 0}
-    hitPoint: {x: 0, y: 0}
-    borderName: 
-  hitMeBorder: []
 --- !u!114 &4447908611489148761
 MonoBehaviour:
   m_ObjectHideFlags: 0

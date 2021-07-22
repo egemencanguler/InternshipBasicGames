@@ -6,7 +6,7 @@ namespace SnakeGrid
 {
     public class SnakeHead : MonoBehaviour
     {
-        public Vector2 pos;
+        public Vector2 pos; // TODO floatli positiona ya da position to gride gerek yokki hersey gridde zaten
         public MyGrid nextGrid;
         public Vector2 direction;
         public float speed;
@@ -31,6 +31,7 @@ namespace SnakeGrid
 
         void Update()
         {
+            //TODO instance :(
             pos = MyGridSystem.instance.WorldPositionToGrid(transform.position);
 
 
@@ -46,6 +47,7 @@ namespace SnakeGrid
                 direction.y = 0;
             }
 
+            // TODO timeToStep -= Time.deltaTime daha hos
             timeToStep += speed * Time.deltaTime;
 
             if (timeToStep >= 1)
@@ -61,6 +63,7 @@ namespace SnakeGrid
 
                 if (nextGrid.placedObj != null)//collider check
                 {
+                    // TODO string
                     if (nextGrid.placedObjTag == "food")
                     {
                         Destroy(nextGrid.placedObj);
@@ -79,6 +82,17 @@ namespace SnakeGrid
 
                 if (mySnake.Count >= 2)//tail movement
                 {
+                    // TODO 
+                    /*
+                            struct GridPos{int x,y}
+                            
+                            Queue<GridPos> snakePositions;
+                            snakePositions.Enqueue(newPos)
+                            snakePositions.Dequeue()
+                            foreach pos in snakePositions
+                                snakeParts[i++].transform.positions = pos;
+                     */
+
                     for (int i = mySnake.Count - 1; i >= 1; i--)
                     {
                         if (i == mySnake.Count - 1)
@@ -86,6 +100,7 @@ namespace SnakeGrid
                             var gPos = MyGridSystem.instance.WorldPositionToGrid(mySnake[i].transform.position);
                             MyGridSystem.instance.RemoveTheObjectFromGrid(gPos);
                         }
+                        // TODO kisa fonskyon birden falza yerden kullanmiyosan gereksiz
                         ReplaceTails(mySnake[i], mySnake[i - 1]);
                     }
                 }

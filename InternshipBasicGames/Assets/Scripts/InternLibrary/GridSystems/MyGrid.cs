@@ -6,7 +6,7 @@ using UnityEngine;
 public class MyGrid 
 {
     public Vector2 worldPosition;
-    public Vector2 gridPosition;
+    public Vector2 gridPosition; // TODO hic kullanilmamis
     
     public GameObject placedObj;
     public string placedObjTag;

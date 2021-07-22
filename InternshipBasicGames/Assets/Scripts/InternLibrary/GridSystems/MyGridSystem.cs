@@ -5,11 +5,12 @@ using UnityEngine;
 public class MyGridSystem : MonoBehaviour
 {
     public static MyGridSystem instance;
+    // TODO column row yerine sizeX, sizeY tercih ediyorum daha az karisiyor
     public int rows;
     public int cols;
     public float gridSize = 1;
     public MyGrid[,] myGrid = new MyGrid[0, 0];
-    float Xoffset, Yoffset;
+    float Xoffset, Yoffset; // TODO xOffset, yOffset ya da Vector2 offset;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class MyGridSystem : MonoBehaviour
         GenerateGridMap();
     }
 
+    // TODO bos fonksyonlar
     void Start()
     {
     }
@@ -55,7 +57,7 @@ public class MyGridSystem : MonoBehaviour
     {
         if (pos.x >= cols)
         {
-            pos.x = pos.x % cols;
+            pos.x = pos.x % cols; // TODO float ve mod operatoru ne donuyor inan bilmiyorum
         }
         else if (pos.x < 0)
         {

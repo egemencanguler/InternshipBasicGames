@@ -72,6 +72,7 @@ namespace Sokoban3D
             if (movementDirection == Vector3.zero && !playerIsDeath) //to get mouse swipe
             {
 
+                // TODO swipe tespiti ekran cozunurlugune bagli dusuk cozunurluklu bi telefon kullaniyosam parmagimi daha fazla hareket ettirmem gerekiyor
                 if (Input.GetMouseButtonDown(0))
                 {
                     startMousePos = Input.mousePosition;
@@ -113,6 +114,7 @@ namespace Sokoban3D
                     }
                 }
 
+                // TODO Equls kullanmanin bi nedeni varmi enumlarda mouseDirection == MouseDirection.Up diyebilirsin enum = int
                 if (mouseDirection.Equals(MouseDirection.Up))
                 {
                     movementDirection = new Vector3(0, 0, 1);
@@ -158,6 +160,7 @@ namespace Sokoban3D
             if (!nextGridIs.Equals(ObjectList.NextGridIs.None))
             {
 
+                // TODO no string 
                 animator.SetBool("run", true);
                 var pos = transform.position;
                 roadTaken += speed * Time.deltaTime;

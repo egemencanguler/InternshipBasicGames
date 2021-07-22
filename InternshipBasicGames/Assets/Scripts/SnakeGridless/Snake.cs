@@ -9,7 +9,7 @@ namespace SnakeGridless
     public class Snake : MonoBehaviour
     {
         [SerializeField] private float speed;
-        private float currentSpeed;
+        private float currentSpeed; // TODO local
         Vector2 movement;
         public Vector2 movementDirection;
         Vector2 newPos;
@@ -37,6 +37,20 @@ namespace SnakeGridless
         // Update is called once per frame
         void Update()
         {
+            // TODO
+            /*
+                if Input.KeyDown
+                    slowDown = !slowDown
+                    if slowDown
+                        targetFps =    
+                    else 
+                        targetFps = 
+                    
+                    daha temiz
+                    
+                    targetFps = slowDown ?? 10 : 300 // daha da kisaltmak istersen 
+             
+             */
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 if (!slowDown)
@@ -61,11 +75,13 @@ namespace SnakeGridless
             }// if height and width rects is equals and the mouse is in that area,it stops
 
             movementDirection.Normalize();
-            currentSpeed = speed * Time.deltaTime;
+            currentSpeed = speed * Time.deltaTime; // TODO current speed degil bu movement
 
 
             movement = movementDirection.normalized * currentSpeed;
             newPos += movement;
+            
+            Debug.DrawLine(transform.position, newPos,Color.green, 100);
 
             if (movementDirection != Vector2.zero)
             {
@@ -151,6 +167,7 @@ namespace SnakeGridless
                             }
                         }// for the newly created tail
 
+                        // TODO karisik anlamadim 2 foodu ayni anda alinca patliyor - snakePathIterator neden var?
                         Vector2 newTailPos = Vector2.zero;
 
                         var distance = snakeTailDistance;

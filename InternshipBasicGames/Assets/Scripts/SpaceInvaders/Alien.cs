@@ -6,7 +6,22 @@ namespace SpaceInvaders
 {
     public class Alien : MonoBehaviour
     {
-        public bool canAttack;
+        public bool canAttack; // TODO cok problemli ve karisik bi logic var burda
+        
+        /*
+            class AlienController
+                Alien[,] aliens
+                
+                for x = 0 x < sizeX x ++
+                    for y = 0 y < sizeY y ++
+                        if aliens[x,y] != null // Not killed en ondekini bul ve ondan ates et
+                            ShootBullet(x,y);
+                            break; 
+         
+         
+         */
+        
+        
         public int numberAtAlienList;
         float timer;
         public int timeToAttackMax;

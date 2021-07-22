@@ -8,13 +8,21 @@ namespace SpaceInvaders
 {
     public class AliensController : MonoBehaviour
     {
-        public Vector2 alienNumber;
+        public Vector2 alienNumber; // TODO integer deger vector2 de tutulmaz
         public Vector2 aliensIntervalOffset;
         public Vector2 sizeOfGrupBounds = new Vector2();
 
         public ObjectBounds objBounds;
         public GameObject alienPrefab;
-        private Vector2 iteratorPoints;
+        private Vector2 iteratorPoints; // TODO iteratorPoint?
+        /*
+         *
+         *  var startPos = -new Vector2(x * alienSize.x, y * alienSize.y) + alienSize / 2;
+         *  for x in sizeX
+         *     for y in sizeY
+         *         Vector3 localPos = startPos + new Vector2(x * alienSize.x,y * alienSize.y);
+         *         
+         */
 
 
         public List<GameObject> AliensList = new List<GameObject>();
@@ -38,7 +46,7 @@ namespace SpaceInvaders
         void Start()
         {
             gameCore = FindObjectOfType<Gamecore>();
-            GenerateAlienGroup();
+            GenerateAlienGroup(); // TODO neden fonksyon bu okumak icin ekstra caba sarf ediyorum
         }
 
         // Update is called once per frame
@@ -84,7 +92,7 @@ namespace SpaceInvaders
                     AliensList.Add(Instantiate(alienPrefab, iteratorPoints, Quaternion.identity, transform));
                     gameCore.BulletCheckList.Add(AliensList[alienListNumber].GetComponent<ObjectBounds>());
                     AliensList[alienListNumber].GetComponent<Alien>().numberAtAlienList = alienListNumber;
-                    if (k == alienNumber.y - 1)
+                    if (k == alienNumber.y - 1) // TODO visual studio uyari vermiyormu
                     {
                         AliensList[alienListNumber].GetComponent<Alien>().canAttack = true;
                     }
@@ -130,12 +138,15 @@ namespace SpaceInvaders
                 iteratorPoints.y -= alienBounds.rect.height / 2;
             }
             Gizmos.DrawWireCube(transform.position, sizeOfGrupBounds);
-
+            
+            // TODO deegiskenlere atama yaparsan editorden ayarlanmaz olurlar
+            // TODO Gizmod.DrawLine kullanmaya devam edebilirdin consistency
+            
             /////
             //Debug.DrawRay((Vector2)transform.position, movementDirection.normalized * ballSpeed * Time.deltaTime, Color.red);
             Debug.DrawRay((Vector2)transform.position, movementDirection.normalized * speed, Color.red);
 
-            Borders[] borders = new Borders[4];
+            Borders[] borders = new Borders[4]; // TODO override ediyosun bos allocation
             borders = objBounds.UpdateBorderAndReturn();
 
             Debug.DrawRay(borders[0].p1, movementDirection.normalized * speed, Color.green);

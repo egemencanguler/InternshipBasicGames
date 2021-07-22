@@ -5,7 +5,7 @@ using InternLibrary.Border;
 
 namespace InternLibrary.Vektors
 {
-    public class VektorProperties
+    public class VektorProperties // TODO Vector
     {
 
         /// <summary>
@@ -25,6 +25,13 @@ namespace InternLibrary.Vektors
         /// <summary>
         /// Finds whether two vectors intersect momentarily
         /// </summary>
+
+        // TODO unitynin Physics.Raycast fonksyon imzasini ornek alarak yazabilirsin bu kotu
+        /*
+         *    public static bool FindLineIntersection(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, out var intersection)
+         * 
+         */
+        
         public static Vector2 LineSegmentIntersec(Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4)
         {
             Vector2 r = p2 - p1;
@@ -244,7 +251,7 @@ namespace InternLibrary.Vektors
             Borders foundedBorder = new Borders();
             ObjectBounds foundedObj = null;
 
-            Borders[] objBorders = new Borders[4];
+            Borders[] objBorders = new Borders[4]; // TODO bir sonraki satirda override ediyosun atadigin degeri
             objBorders = obj.UpdateBorderAndReturn();
 
             for (int j = 0; j < objBorders.Length; j++)
@@ -276,6 +283,7 @@ namespace InternLibrary.Vektors
                 }
             }
 
+            // TODO sihirli sayi his kullanmaman gereken bi olay illa kullanicaksanda const NoHit = -1110 diye tanimlarsin bunu kullanan klasta
             if (foundedBorder.hitPoint.x == -1110) // To check hit is null or not. Ask..
             {
                 return null;
@@ -292,6 +300,7 @@ namespace InternLibrary.Vektors
         /// </summary>
         public static Vector2 AlignCenterPointToIntersectionPoint(Vector2 to, Vector2 from, Vector2 interPoint, Borders foundedBorder, ObjectBounds obj)
         {
+            // TODO interPoint kullanilmiyor
             Vector2 movementVector = to + from;
             interPoint = LineIntersect(from, movementVector, foundedBorder.p1, foundedBorder.p2);
             float offsetY;
@@ -334,6 +343,8 @@ namespace InternLibrary.Vektors
                 }
 
                 point = LineSegmentIntersec(obj.borders[borderNumber].p2, obj.borders[borderNumber].p1, other.borders[otherBorderNumber].p2, other.borders[otherBorderNumber].p1);
+                // TODO sihirli sayi
+
                 if(point.x != -1110)
                 {
                     return true;

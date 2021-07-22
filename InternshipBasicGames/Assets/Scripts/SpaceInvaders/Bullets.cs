@@ -8,9 +8,9 @@ namespace SpaceInvaders
     public class Bullets : MonoBehaviour
     {
         public float speed;
-        Vector2 movement;
+        Vector2 movement; // TODO neden local degil
         public Vector2 movementDirection;
-        Vector2 newPos;
+        Vector2 newPos;// TODO neden local degil
         public ObjectBounds objBounds;
         Gamecore gameCore;
 
@@ -33,7 +33,7 @@ namespace SpaceInvaders
                 {
                     Destroy(gameObject);
                     gameCore.player.GetComponent<Player>().GetScore();
-                    hit.GetComponent<Alien>().Dead();
+                    hit.GetComponent<Alien>().Dead(); // TODO alien.Kill()
 
                 }
                 else if (hit.objectTag.Equals(ObjectTagList.ObjectTags.Player))
@@ -43,6 +43,7 @@ namespace SpaceInvaders
                 }
             }
 
+            // TODO sihirli sayilar
             if (transform.position.y < -5f || transform.position.y > 5)
             {
                 Destroy(gameObject);

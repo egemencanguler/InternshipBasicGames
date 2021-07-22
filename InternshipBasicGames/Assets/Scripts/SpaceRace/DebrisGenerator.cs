@@ -9,8 +9,10 @@ namespace SpaceRace
         public Debris[] debrises = new Debris[24];
         [Range(1, 10)] public int maxBirth1Generate;
         [Range(1, 5)] public float generateIntervalTime;
-        public int iterator;
-        public Vector2[] LeftPoints = new Vector2[2];
+        public int iterator; // TODO neden public
+        public Vector2[] LeftPoints = new Vector2[2]; // TODO neden buyuk harfle basliyor, gizmoyla cizilmemis editlemesi zor,
+                                                      // transform atamasida yapilabilirdi editlemeyi kolaylastirmak icin
+                                                      
         public Vector2[] RightPoints = new Vector2[2];
 
         float timer;
@@ -26,6 +28,9 @@ namespace SpaceRace
 
         void Update()
         {
+            // TODO timer -= Time.deltaTime - bu sekilde yazarsan sadece timer degiskeniyle olayi kurtariyosun start fonksyonunada gerek kalmiyor
+            // if timer < 0 timer = Random.Range(0.5f, 2f);
+            
             timer += Time.deltaTime;
             if (timer >= currentIntervalTime)
             {
@@ -43,6 +48,8 @@ namespace SpaceRace
             {
                 int leftOrRight = Random.Range(0, 2);
                 float initialPointY, initialPointX, movementDirection;
+                // TODO degiskene random int atip secim yapmak yerine 
+                // if (Random.value < 0.5f) yapabilirsin
                 if (leftOrRight == 0) //left
                 {
                     initialPointY = Random.Range(LeftPoints[1].y, LeftPoints[0].y);

@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/Scenes/Sokoban3D Levels/Sokoban3D_Level01.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
